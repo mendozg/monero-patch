@@ -11,4 +11,3 @@ index c31a207..ca830d3 100644
      {
        txpool_tx_meta_t meta;
        if (!m_blockchain.get_txpool_tx_meta(sorted_it->second, meta))
-
