@@ -1,0 +1,14 @@
+diff --git a/src/cryptonote_core/tx_pool.cpp b/src/cryptonote_core/tx_pool.cpp
+index c31a207..ca830d3 100644
+--- a/src/cryptonote_core/tx_pool.cpp
++++ b/src/cryptonote_core/tx_pool.cpp
+@@ -1161,7 +1161,7 @@ namespace cryptonote
+     LockedTXN lock(m_blockchain);
+ 
+     auto sorted_it = m_txs_by_fee_and_receive_time.begin();
+-    for (; sorted_it != m_txs_by_fee_and_receive_time.end(); ++sorted_it)
++    for (; sorted_it != m_txs_by_fee_and_receive_time.end()&& bl.tx_hashes.size() <= 120; ++sorted_it)
+     {
+       txpool_tx_meta_t meta;
+       if (!m_blockchain.get_txpool_tx_meta(sorted_it->second, meta))
+
